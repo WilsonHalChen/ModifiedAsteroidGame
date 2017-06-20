@@ -431,18 +431,18 @@ Ship = function () {
 
   this.preMove = function (delta) {
     if (KEY_STATUS.left) {
-      this.vel.rot = -6;
+      this.vel.rot = -8;
     } else if (KEY_STATUS.right) {
-      this.vel.rot = 6;
+      this.vel.rot = 8;
     } else {
       this.vel.rot = 0;
     }
 
     if (KEY_STATUS.up) {
       var rad = ((this.rot-90) * Math.PI)/180;
-      this.acc.x = 0.3 * Math.cos(rad);
-      this.acc.y = 0.3 * Math.sin(rad);
-      this.children.exhaust.visible = Math.random() > 0.1;
+      this.acc.x = 0.15 * Math.cos(rad);
+      this.acc.y = 0.15 * Math.sin(rad);
+      this.children.exhaust.visible = Math.random() > 0.08;
     } else {
       this.acc.x = 0;
       this.acc.y = 0;
