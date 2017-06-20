@@ -431,9 +431,9 @@ Ship = function () {
 
   this.preMove = function (delta) {
     if (KEY_STATUS.left) {
-      this.vel.rot = -6;
+      this.vel.rot = -8;
     } else if (KEY_STATUS.right) {
-      this.vel.rot = 6;
+      this.vel.rot = 8;
     } else {
       this.vel.rot = 0;
     }
@@ -454,7 +454,7 @@ Ship = function () {
     }
     if (KEY_STATUS.space) {
       if (this.delayBeforeBullet <= 0) {
-        this.delayBeforeBullet = 20;
+        this.delayBeforeBullet = 5;
         this.shoot();
       }
     }
