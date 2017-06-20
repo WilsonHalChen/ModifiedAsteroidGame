@@ -443,6 +443,12 @@ Ship = function () {
       this.acc.x = 0.3 * Math.cos(rad);
       this.acc.y = 0.3 * Math.sin(rad);
       this.children.exhaust.visible = Math.random() > 0.1;
+    } else if (KEY_STATUS.down) {
+    	var ratio = -0.025;
+    	if(Math.abs(this.vel.x) < .008 && Math.abs(this.vel.y) < .008)
+    		ratio = -0.06;
+      this.acc.x = ratio * this.vel.x;
+      this.acc.y = ratio * this.vel.y;
     } else {
       this.acc.x = 0;
       this.acc.y = 0;
